@@ -78,8 +78,7 @@ public class InnerLoopOptimization {
 			}
 
 			System.out.print("Press '1' to enter array elements manually or anything else to generate random array: ");
-			int choice = getUserInt(scanner);
-			if (choice == 1) {
+			if (getUserInt(scanner) == 1) {
 				arr = createArray(size, scanner);
 			} else {
 				arr = getRandArray(size);
