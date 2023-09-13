@@ -43,20 +43,19 @@ public class OuterLoopOptimization {
 	}
 
 	private static int[] bubbleSort(int[] arr) {
-		int     tmp;
+		int tmp;
 		boolean swapped;
 
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 1; i < arr.length; i++) {
 			swapped = false;
-			for (int j = i+1; j < arr.length; j++) {
-				if (arr[i] > arr[j]) {
-					tmp = arr[i];
-					arr[i] = arr[j];
-					arr[j] = tmp;
+			for (int j = 0; j < arr.length - 1; j++) {
+				if (arr[j] > arr[j + 1]) {
+					tmp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = tmp;
 					swapped = true;
 				}
 			}
-			// check if any swap occurred in the inner loop, if not the array is already sorted
 			if (!swapped) {
 				break;
 			}
